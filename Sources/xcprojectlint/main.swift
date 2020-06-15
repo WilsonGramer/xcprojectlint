@@ -106,6 +106,7 @@ func main() -> Int32 {
 
     reports
       .flatMap { $0.errors }
+      .map { $0 + "\n" }
       .forEach(ErrorReporter.report)
 
     let scriptResult = reports
